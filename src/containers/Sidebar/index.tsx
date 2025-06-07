@@ -4,8 +4,12 @@ import Title from '../../components/Title'
 
 import { Descricao, BotaoTema, SidebarContainer } from './styles'
 
+type Props = {
+  trocaTema: () => void
+}
+
 // isso é o components para criação do aside no html
-const Sidebar = () => (
+const Sidebar = (props: Props) => (
   <aside>
     <SidebarContainer>
       <Avatar></Avatar>
@@ -16,7 +20,7 @@ const Sidebar = () => (
       <Descricao tipo="principal" fontSize={12}>
         Engenheiro Front-end
       </Descricao>
-      <BotaoTema>Trocar tema</BotaoTema>
+      <BotaoTema onClick={props.trocaTema}>Trocar tema</BotaoTema>
     </SidebarContainer>
   </aside>
 )
